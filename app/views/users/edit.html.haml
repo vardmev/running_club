@@ -1,13 +1,35 @@
-%h1 Users#edit
-%p Find me in app/views/users/edit.html.erb
-%p
-  First name:
-  =@user.first_name
+.row
+  .col-12
+    %h1 Users#edit
 = form_for @user do |f|
-  = f.label "First Name"
-  = f.text_field :first_name
+  .form-group.row
+    .col-md-6
+      = f.label "First Name"
+      = f.text_field :first_name, class: "form-control"
 
-  = f.label "Last Name"
-  = f.text_field :last_name
+  .form-group.row
+    .col-md-6
+      = f.label "Last Name"
+      = f.text_field :last_name, class: "form-control"
 
-  = f.submit "save"
+  .form-group.row
+    .col-md-6
+      = f.label "Birthday"
+      = f.text_field :birthday, class: "form-control"
+
+  .form-group.row
+    .col-md-6
+      = f.label "City"
+      = f.text_field :city, class: "form-control"
+
+  .form-group.row
+    .col-md-6
+      = f.label "Club name"
+      = f.text_field :club_name, class: "form-control"
+
+  .form-group.row
+    .col-md-6
+      = f.label "Experience"
+      = f.text_field :experience, class: "form-control"
+
+  = f.submit "save", class: "btn btn-primary"

@@ -1,2 +1,10 @@
 %p First name: #{@user.first_name}
 %p Last name: #{@user.last_name}
+
+%p Birthday: #{@user.birthday}
+%p City: #{@user.city}
+
+%p Club name: #{@user.club_name}
+%p Experience: #{@user.experience}
+
+= link_to "Edit user", edit_user_path(@user), class: 'btn btn-primary'
