@@ -5,12 +5,18 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update(first_name: params[:user][:first_name], last_name: params[:user][:last_name])
+    @user.update(user_params)
 
     redirect_to user_path(@user)
   end
 
   def show
     @user = User.find(params[:id])
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :birthday, :city, :club_name, :experience)
   end
 end

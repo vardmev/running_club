@@ -15,7 +15,7 @@
   .form-group.row
     .col-md-6
       = f.label "Birthday"
-      = f.text_field :birthday, class: "form-control"
+      = f.date_field :birthday, class: "form-control", max: Date.today
 
   .form-group.row
     .col-md-6
@@ -30,6 +30,6 @@
   .form-group.row
     .col-md-6
       = f.label "Experience"
-      = f.text_field :experience, class: "form-control"
+      = f.date_field :experience, class: "form-control", max: Date.today
 
   = f.submit "save", class: "btn btn-primary"
