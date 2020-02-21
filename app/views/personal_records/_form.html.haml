@@ -1,0 +1,21 @@
+= form_for [@user, @personal_record] do |f|
+  - if @personal_record.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@personal_record.errors.count, "error")} prohibited this personal_record from being saved:"
+      %ul
+        - @personal_record.errors.full_messages.each do |message|
+          %li= message
+  .form-group.row
+    .col-md-6
+      = f.label "Distance"
+      = f.text_field :distance, class: "form-control"
+  .form-group.row
+    .col-md-6
+      = f.label "Time"
+      = f.time_field :time, class: "form-control"
+  .form-group.row
+    .col-md-6
+      = f.label "Date"
+      = f.date_field :date, class: "form-control", max: Date.today
+  .actions
+    = f.submit 'Save'

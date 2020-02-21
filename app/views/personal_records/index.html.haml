@@ -1,0 +1,25 @@
+%h1 Listing personal_records
+
+%table
+  %thead
+    %tr
+      %th Distance
+      %th Time
+      %th Date
+      %th
+      %th
+      %th
+
+  %tbody
+    - @personal_records.each do |personal_record|
+      %tr
+        %td= personal_record.distance
+        %td= personal_record.time
+        %td= personal_record.date
+        %td= link_to 'Show', personal_record_path(personal_record)
+        %td= link_to 'Edit', edit_personal_record_path(personal_record)
+        %td= link_to 'Destroy', personal_record_path(personal_record), method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Personal record', new_user_personal_record_path

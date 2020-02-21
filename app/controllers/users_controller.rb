@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
+    # @user.personal_records.build unless @user.personal_records.any?
   end
 
   def update
@@ -18,5 +19,6 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :birthday, :city, :club_name, :experience)
+    # , personal_records_attributes: [:id, :distance, :time, :date])
   end
 end

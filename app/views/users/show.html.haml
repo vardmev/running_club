@@ -7,4 +7,12 @@
 %p Club name: #{@user.club_name}
 %p Experience: #{@user.experience}
 
+- if @user.personal_records.any?
+  Records:
+  - @user.personal_records.each do |record|
+    %p #{record.distance}
+    %p #{record.time}
+    %p #{record.date}
+    %p= link_to 'Edit record', edit_personal_record_path(record)
+
 = link_to "Edit user", edit_user_path(@user), class: 'btn btn-primary'
