@@ -8,11 +8,22 @@
 %p Experience: #{@user.experience}
 
 - if @user.personal_records.any?
-  Records:
-  - @user.personal_records.each do |record|
-    %p #{record.distance}
-    %p #{record.time}
-    %p #{record.date}
-    %p= link_to 'Edit record', edit_personal_record_path(record)
+  %table.table
+    %caption
+      Personal Records
+      = link_to "Add new record", new_user_personal_record_path(@user)
+    %thead.thead-light
+      %tr
+        %th Distance
+        %th Time
+        %th Date
+        %th
+    %tbody
+      - @user.personal_records.each do |record|
+        %tr
+          %td #{record.distance}
+          %td #{record.time}
+          %td #{record.date}
+          %td= link_to 'Edit', edit_personal_record_path(record)
 
 = link_to "Edit user", edit_user_path(@user), class: 'btn btn-primary'

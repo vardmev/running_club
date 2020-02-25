@@ -1,12 +1,12 @@
-%h1 Listing personal_records
+%h1 Personal records
+= link_to 'Back to user page', user_path(@user)
 
-%table
+%table.table
   %thead
     %tr
       %th Distance
       %th Time
       %th Date
-      %th
       %th
       %th
 
@@ -16,10 +16,7 @@
         %td= personal_record.distance
         %td= personal_record.time
         %td= personal_record.date
-        %td= link_to 'Show', personal_record_path(personal_record)
         %td= link_to 'Edit', edit_personal_record_path(personal_record)
         %td= link_to 'Destroy', personal_record_path(personal_record), method: :delete, data: { confirm: 'Are you sure?' }
 
-%br
-
-= link_to 'New Personal record', new_user_personal_record_path
+= link_to 'New Personal Record', new_user_personal_record_path
