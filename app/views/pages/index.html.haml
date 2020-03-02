@@ -1,0 +1,7 @@
+- if user_signed_in?
+  = link_to 'Edit registration', edit_user_registration_path
+  = link_to 'Log out', destroy_user_session_path, method: :delete
+  -# = link_to user_index_path, 'Go to App', class: 'login-button'
+- else
+  = link_to 'Sign in', new_user_session_path, class: 'login-button'
+  = link_to 'Register', new_user_registration_path

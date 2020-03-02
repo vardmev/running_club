@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :users do
     resources :personal_records, only: [:create, :index, :new]
   end
+
+  root to: "pages#index"
 end
