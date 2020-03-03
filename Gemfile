@@ -31,6 +31,9 @@ gem "haml-rails", "~> 2.0"
 
 gem 'bootstrap', '~> 4.4.1'
 
+# Engine that provides an easy-to-use interface for managing your data
+gem 'rails_admin', '~> 2.0'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
