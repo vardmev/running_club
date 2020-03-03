@@ -26,6 +26,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 gem 'devise'
+#CanCanCan is an authorization library
+gem 'cancancan'
 
 gem "haml-rails", "~> 2.0"
 
